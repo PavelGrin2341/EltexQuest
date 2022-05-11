@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    int buf[100];
+    char c;
+    int k = 0;
+    
+    while (c != '\n') {
+        if (scanf("%d%c", &n, &c) != 2 || (c != ' ' && c != '\n')) {
+            printf("Error");
+            exit(1);
+        } 
+        buf[k] = n;
+        k++;
+    }
+
+    for (int i = k; i > 0; i--) {
+        if (i == 0) {
+            printf("%d", buf[i - 1]);
+        } else {
+            printf("%d ", buf[i - 1]);
+        }
+    }
+
+    return 0;
+}
